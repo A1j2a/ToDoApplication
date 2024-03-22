@@ -39,7 +39,7 @@ export default function TeamScreen(props: any) {
   const fatch = async () => {
     toggleLoader(true);
     try {
-      const response = await teams.list();
+      const response: any = await teams.list();
       setTeamList(response.teams);
       setTotal(response.total);
       toggleLoader(false);
@@ -105,6 +105,7 @@ export default function TeamScreen(props: any) {
       },
       function (error) {
         toggleLoader(false);
+        showError(error.message);
         console.log(error); // Failure
       }
     );

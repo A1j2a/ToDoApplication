@@ -76,7 +76,7 @@ export default function HomeScreen(props: any) {
     );
 
     promise.then(
-      function (response) {
+      function (response: any) {
         toggleLoader(false);
         setTasks(response.documents);
         setTotal(response.total);
